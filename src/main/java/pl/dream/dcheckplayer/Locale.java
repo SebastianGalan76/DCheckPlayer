@@ -17,11 +17,13 @@ public enum Locale {
     NO_PLAYER("noPlayer", ""),
     PLAYER_IS_ALREADY_CHECKED("playerIsAlreadyChecked", ""),
     PLAYER_IS_NOT_CHECKED("playerIsNotChecked", ""),
+    PLAYER_CANT_BE_CHECKED("playerCantBeChecked", ""),
     DISALLOWED_COMMAND("disallowedCommand", ""),
     HELP_STAFF("help.staff", ""),
     HELP_ADMIN("help.admin", ""),
     ADMISSION_CONFIRMATION("admission.confirmation", ""),
     ADMISSION_USAGE("admission.usage", ""),
+    LOCATIONS_ARE_NOT_SET("locationsAreNotSet"),
     ;
 
     private final String path;

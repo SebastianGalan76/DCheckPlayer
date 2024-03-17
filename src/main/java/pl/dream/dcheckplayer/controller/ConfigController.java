@@ -1,7 +1,9 @@
 package pl.dream.dcheckplayer.controller;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.jetbrains.annotations.Debug;
 import pl.dream.dcheckplayer.DCheckPlayer;
 import pl.dream.dreamlib.Config;
 
@@ -26,9 +28,13 @@ public class ConfigController {
         plugin.logoutCommands = config.getStringList("commands.logout");
         plugin.cheaterCommands = config.getStringList("commands.cheater");
         plugin.admissionCommands = config.getStringList("commands.admission");
+
+        plugin.spawnLocation = Config.getLocation(config, "locations.spawn");
+        plugin.cageLocation = Config.getLocation(config, "locations.cage");
     }
 
     public void setLocation(String path, Location location){
         Config.setLocation(DCheckPlayer.getPlugin(), path, location);
+        DCheckPlayer.getPlugin().saveConfig();
     }
 }

@@ -4,11 +4,16 @@ onlyPlayer: "&cTylko gracz może użyć tej komendy!"
 noPlayer: "&cNie ma takiego gracza na serwerze!"
 playerIsAlreadyChecked: "&cTen gracz jest już sprawdzany!"
 playerIsNotChecked: "&cTen gracz nie jest podczas sprawdzania!"
+playerCantBeChecked: "&aTen gracz nie może być sprawdzany."
 disallowedCommand: "&cJesteś obecnie sprawdzany i nie możesz użyć tej komendy!"
 setLocation: "&aLokalizacja została ustawiona prawidłowo."
+locationsAreNotSet:
+  - "&cLokalizacje klatki i spawnu nie są jeszcze ustawione"
+  - "&c/check setspawn &7- Ustawia pozycję spawnu"
+  - "&c/check setcage &7- Ustawia pozycję klatki"
 admission:
   confirmation: "&cJeśli przyznajesz się do posiadania cheatów. Napisz ponownie &a/przyznaje sie"
-  usage: "&7Poprawne użycie komendy: &c/przyznaje się&7."
+  usage: "&7Poprawne użycie komendy: &c/przyznaje sie&7."
 help:
   staff:
     - ""

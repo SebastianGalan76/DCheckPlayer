@@ -37,25 +37,25 @@ public class AdmissionCommand implements CommandExecutor {
                 SuspectPlayer suspectPlayer = DCheckPlayer.getPlugin().suspects.get(sender.getName());
 
                 if(suspectPlayer==null){
-                    UUID uuid = ((Player)sender).getUniqueId();
-                    BukkitTask bukkitTask = confirmations.get(uuid);
+                    Player player = (Player)sender;
+                    BukkitTask bukkitTask = confirmations.get(player.getUniqueId());
 
                     if(bukkitTask!=null){
                         bukkitTask.cancel();
 
-                        new SuspectPlayer((Player)sender).admission();
+                        new SuspectPlayer(player).admission();
                         return true;
                     }
 
                     Message.sendMessage(sender, Locale.ADMISSION_CONFIRMATION.toString());
-                    bukkitTask = DCheckPlayer.getPlugin().getServer().getScheduler().runTaskTimerAsynchronously(DCheckPlayer.getPlugin(), new Runnable() {
+                    bukkitTask = DCheckPlayer.getPlugin().getServer().getScheduler().runTaskLaterAsynchronously(DCheckPlayer.getPlugin(), new Runnable() {
                         @Override
                         public void run() {
-                            confirmations.remove(uuid);
+                            confirmations.remove(player.getUniqueId());
                         }
-                    }, 0, 400);
+                    }, 400);
 
-                    confirmations.put(uuid, bukkitTask);
+                    confirmations.put(player.getUniqueId(), bukkitTask);
                 }
                 else{
                     suspectPlayer.admission();

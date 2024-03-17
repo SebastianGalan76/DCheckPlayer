@@ -6,3 +6,4 @@ authors: [DreaMPL]
 commands:
   check:
     aliases: ["czysty"]
+  przyznaje:

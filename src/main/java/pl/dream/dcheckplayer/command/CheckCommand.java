@@ -1,6 +1,7 @@
 package pl.dream.dcheckplayer.command;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -46,7 +47,9 @@ public class CheckCommand implements CommandExecutor {
             else if(args[0].equalsIgnoreCase("setspawn")){
                 if(checkPermission(sender, "dcheckplayer.admin")){
                     if(sender instanceof Player){
-                        DCheckPlayer.getPlugin().configController.setLocation("locations.spawn", ((Player) sender).getLocation());
+                        Location loc = ((Player) sender).getLocation();
+                        DCheckPlayer.getPlugin().spawnLocation = loc;
+                        DCheckPlayer.getPlugin().configController.setLocation("locations.spawn", loc);
                         Message.sendMessage(sender, Locale.SET_LOCATION.toString());
                     }
                 }
@@ -56,7 +59,9 @@ public class CheckCommand implements CommandExecutor {
             else if(args[0].equalsIgnoreCase("setcage")){
                 if(checkPermission(sender, "dcheckplayer.admin")){
                     if(sender instanceof Player){
-                        DCheckPlayer.getPlugin().configController.setLocation("locations.cage", ((Player) sender).getLocation());
+                        Location loc = ((Player) sender).getLocation();
+                        DCheckPlayer.getPlugin().cageLocation = loc;
+                        DCheckPlayer.getPlugin().configController.setLocation("locations.cage", loc);
                         Message.sendMessage(sender, Locale.SET_LOCATION.toString());
                     }
                 }
@@ -76,9 +81,18 @@ public class CheckCommand implements CommandExecutor {
                 return true;
             }
 
+            if(DCheckPlayer.getPlugin().spawnLocation == null || DCheckPlayer.getPlugin().cageLocation == null){
+                Message.sendMessage(sender, Locale.LOCATIONS_ARE_NOT_SET.getList());
+                return true;
+            }
+
             Player player = Bukkit.getPlayer(args[0]);
             if(player==null){
                 Message.sendMessage(sender, Locale.NO_PLAYER.toString());
+                return true;
+            }
+            if(player.hasPermission("dcheckplayer.admin")){
+                Message.sendMessage(sender, Locale.PLAYER_CANT_BE_CHECKED.toString());
                 return true;
             }
 
