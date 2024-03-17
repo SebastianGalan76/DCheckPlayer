@@ -1,3 +1,17 @@
 noPermission: ""
 reload: "&aPlugin został przeładowany!"
+onlyPlayer: "&cTylko gracz może użyć tej komendy!"
+noPlayer: "&cNie ma takiego gracza na serwerze!"
+playerIsAlreadyChecked: "&cTen gracz jest już sprawdzany!"
+playerIsNotChecked: "&cTen gracz nie jest podczas sprawdzania!"
 disallowedCommand: "&cJesteś obecnie sprawdzany i nie możesz użyć tej komendy!"
+setLocation: "&aLokalizacja została ustawiona prawidłowo."
+help:
+  staff:
+    - ""
+    - ""
+    - ""
+  admin:
+    - ""
+    - ""
+    - ""

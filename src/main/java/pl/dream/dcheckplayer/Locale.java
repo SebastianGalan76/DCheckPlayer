@@ -12,7 +12,14 @@ import java.util.*;
 public enum Locale {
     NO_PERMISSION("noPermission", ""),
     RELOAD("reload", ""),
-    DISALLOWED_COMMAND("disallowedCommand", "")
+    SET_LOCATION("setLocation", ""),
+    ONLY_PLAYER("onlyPlayer", ""),
+    NO_PLAYER("noPlayer", ""),
+    PLAYER_IS_ALREADY_CHECKED("playerIsAlreadyChecked", ""),
+    PLAYER_IS_NOT_CHECKED("playerIsNotChecked", ""),
+    DISALLOWED_COMMAND("disallowedCommand", ""),
+    HELP_STAFF("help.staff", ""),
+    HELP_ADMIN("help.admin", ""),
     ;
 
     private final String path;

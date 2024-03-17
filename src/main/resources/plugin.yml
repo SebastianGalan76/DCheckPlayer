@@ -3,3 +3,6 @@ version: '${project.version}'
 main: pl.dream.dcheckplayer.DCheckPlayer
 api-version: '1.20'
 authors: [DreaMPL]
+commands:
+  check:
+    aliases: ["czysty"]

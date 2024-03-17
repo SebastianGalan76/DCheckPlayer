@@ -2,6 +2,7 @@ package pl.dream.dcheckplayer;
 
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
+import pl.dream.dcheckplayer.command.CheckCommand;
 import pl.dream.dcheckplayer.controller.ConfigController;
 import pl.dream.dcheckplayer.data.AdminPlayer;
 import pl.dream.dcheckplayer.data.SuspectPlayer;
@@ -31,6 +32,8 @@ public final class DCheckPlayer extends JavaPlugin {
         admins = new HashMap<>();
 
         loadPlugin();
+
+        getCommand("check").setExecutor(new CheckCommand());
 
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(), this);
         getServer().getPluginManager().registerEvents(new PlayerQuitListener(), this);
