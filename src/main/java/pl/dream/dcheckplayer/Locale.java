@@ -12,6 +12,7 @@ import java.util.*;
 public enum Locale {
     NO_PERMISSION("noPermission", ""),
     RELOAD("reload", ""),
+    DISALLOWED_COMMAND("disallowedCommand", "")
     ;
 
     private final String path;
