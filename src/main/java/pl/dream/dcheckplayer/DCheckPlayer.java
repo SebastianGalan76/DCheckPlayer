@@ -13,16 +13,23 @@ import pl.dream.dcheckplayer.listener.SendMessageListener;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public final class DCheckPlayer extends JavaPlugin {
     private static DCheckPlayer plugin;
 
-    public ConfigController configController;
     public HashMap<String, SuspectPlayer> suspects;
     public HashMap<String, AdminPlayer> admins;
 
+    public ConfigController configController;
     public Set<String> allowedCommands;
+
+    public List<String> checkCommands;
+    public List<String> clearCommands;
+    public List<String> logoutCommands;
+    public List<String> cheaterCommands;
+    public List<String> admissionCommands;
 
     @Override
     public void onEnable() {

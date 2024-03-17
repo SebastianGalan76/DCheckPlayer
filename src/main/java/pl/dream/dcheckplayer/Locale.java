@@ -20,6 +20,8 @@ public enum Locale {
     DISALLOWED_COMMAND("disallowedCommand", ""),
     HELP_STAFF("help.staff", ""),
     HELP_ADMIN("help.admin", ""),
+    ADMISSION_CONFIRMATION("admission.confirmation", ""),
+    ADMISSION_USAGE("admission.usage", ""),
     ;
 
     private final String path;

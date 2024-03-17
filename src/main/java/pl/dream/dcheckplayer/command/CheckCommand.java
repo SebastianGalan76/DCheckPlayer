@@ -17,10 +17,7 @@ import java.util.List;
 public class CheckCommand implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String label, @NotNull String[] args) {
-        if(args.length==0){
-            showHelp(sender);
-        }
-        else if(args.length==1){
+        if(args.length==1){
             if(!checkPermission(sender, "dcheckplayer.staff")){
                 return true;
             }
@@ -127,6 +124,8 @@ public class CheckCommand implements CommandExecutor {
                     else if(args[1].equalsIgnoreCase("on")){
                         admin.chat = true;
                     }
+
+                    //TODO switch chat
                 }
                 else{
                     Message.sendMessage(sender, Locale.ONLY_PLAYER.toString());
@@ -159,6 +158,9 @@ public class CheckCommand implements CommandExecutor {
                 suspectPlayer.admission();
                 return true;
             }
+        }
+        else {
+            showHelp(sender);
         }
 
         return true;

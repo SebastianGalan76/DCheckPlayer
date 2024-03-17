@@ -1,3 +1,19 @@
 allowedCommands:
   - "msg"
   - "helpop"
+  - "przyznaje"
+commands:
+  check:
+    - ""
+    - ""
+    - ""
+  clear:
+    - ""
+    - ""
+    - ""
+  logout:
+    - "ban {PLAYER} Wylogowanie się podczas sprawdzania!"
+  cheater:
+    - "ban {PLAYER} Posiadanie cheatów"
+  admission:
+    - "tempban {PLAYER} 14d Przyznanie się do cheatów"

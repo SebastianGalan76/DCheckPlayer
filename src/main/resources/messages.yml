@@ -6,6 +6,9 @@ playerIsAlreadyChecked: "&cTen gracz jest już sprawdzany!"
 playerIsNotChecked: "&cTen gracz nie jest podczas sprawdzania!"
 disallowedCommand: "&cJesteś obecnie sprawdzany i nie możesz użyć tej komendy!"
 setLocation: "&aLokalizacja została ustawiona prawidłowo."
+admission:
+  confirmation: "&cJeśli przyznajesz się do posiadania cheatów. Napisz ponownie &a/przyznaje sie"
+  usage: "&7Poprawne użycie komendy: &c/przyznaje się&7."
 help:
   staff:
     - ""
